@@ -34,5 +34,12 @@ async def 抽晚餐(ctx):
     random_txt = random.choice(jdata['txt'])
     #pic = discord.File(random_pic)
     await ctx.send(random_txt)
-
+#@bot.command()   
+##async def 抽現金(ctx):
+#    random_cash = random.choice(jdata['cash'])
+    #pic = discord.File(random_pic)
+#    await ctx.send(random_cash)
+@bot.command()   
+async def 抽現金(ctx):
+    await ctx.send(random.randint(1,200000))
 bot.run(jdata['TOKEN'])
