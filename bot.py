@@ -1,10 +1,14 @@
 #載入Discord 模組
 import discord
 from discord.ext import commands
+from discord.voice_client import VoiceClient
+#from discord.voicechannel import VoiceChannel
+
 #載入json模組
 import json
 #載入ranom(隨機)模組
 import random
+
 #載入setting.json檔案
 #請於同格資料夾內新增setting.json
 #建立資料
@@ -42,4 +46,8 @@ async def 抽晚餐(ctx):
 @bot.command()   
 async def 抽現金(ctx):
     await ctx.send(random.randint(1,200000))
+@bot.command()
+async def join(ctx):
+    channel = ctx.author.voice.channel
+    await channel.connect()
 bot.run(jdata['TOKEN'])
