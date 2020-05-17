@@ -14,5 +14,10 @@ async def 抽(ctx):
     random_pic = random.choice(jdata['pic'])
     pic = discord.File(random_pic)
     await ctx.send(file=pic)
+@bot.command()   
+async def 抽晚餐(ctx):
+    random_txt = random.choice(jdata['txt'])
+    #pic = discord.File(random_pic)
+    await ctx.send(random_txt)
 
 bot.run(jdata['TOKEN'])
